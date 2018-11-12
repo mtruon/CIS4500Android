@@ -1,6 +1,8 @@
 package com.cis4500.music;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.cis4500.music.fragments.PlaybackBarFragment;
 
@@ -21,6 +23,19 @@ public class MainActivity extends AppCompatActivity implements PlaybackBarFragme
 
     public void setBarTitle(String title) {
         getSupportActionBar().setTitle(title);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() != R.id.search) { return false; }
+        // Run Search
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
