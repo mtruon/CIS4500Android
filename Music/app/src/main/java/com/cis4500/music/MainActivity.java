@@ -16,6 +16,8 @@ import androidx.appcompat.widget.SearchView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.navigation.NavController;
+import androidx.navigation.NavHost;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.transition.ChangeBounds;
 import androidx.transition.TransitionManager;
 
@@ -52,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements PlaybackBarFragme
             @Override
             public boolean onQueryTextSubmit(String query) {
                 // perform query here
-
+/*
                 // Dummy data
                 List albums = new ArrayList<>();
                 albums.add(new Album("OK Computer", "Radiohead", "", 1991, 12));
@@ -77,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements PlaybackBarFragme
 
                 // workaround to avoid issues with some emulators and keyboard devices firing twice if a keyboard enter is used
                 // see https://code.google.com/p/android/issues/detail?id=24599
-                searchView.clearFocus();
+                searchView.clearFocus();*/
                 return true;
             }
 
@@ -96,8 +98,8 @@ public class MainActivity extends AppCompatActivity implements PlaybackBarFragme
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         final SearchView searchView = (SearchView) item.getActionView();
-//        Navigation.findNavController(searchView).navigate(R.id.artistFragment);
-
+        NavController nav = Navigation.findNavController(findViewById(R.id.fragmentContainer));
+        nav.navigate(R.id.searchFragment);
         return super.onOptionsItemSelected(item);
     }
 

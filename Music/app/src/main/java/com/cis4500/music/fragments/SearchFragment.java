@@ -18,11 +18,13 @@ import androidx.annotation.Nullable;
 
 public class SearchFragment extends ListFragment implements SearchRecyclerViewAdapter.SearchRecyclerViewDelegate {
 
-    private List results;
+    private List<String> results;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        results = new ArrayList<>();
+        results.add("NOOB");
     }
 
     @Override
