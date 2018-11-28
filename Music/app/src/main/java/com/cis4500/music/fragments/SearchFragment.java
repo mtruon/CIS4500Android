@@ -47,7 +47,7 @@ public class SearchFragment extends ListFragment implements SearchRecyclerViewAd
 
     @Override
     public String getTitle() {
-        return "Songs";
+        return "Search Results";
     }
 
 }

@@ -48,7 +48,8 @@ public class MainActivity extends AppCompatActivity implements PlaybackBarFragme
         getMenuInflater().inflate(R.menu.option_menu, menu);
 
         MenuItem searchItem = menu.findItem(R.id.search);
-        final SearchView searchView = (SearchView) searchItem.getActionView();
+        SearchView searchView = (SearchView) searchItem.getActionView();
+
         // Expand the search view and request focus
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -74,12 +75,12 @@ public class MainActivity extends AppCompatActivity implements PlaybackBarFragme
                 List results = new ArrayList<>();
                 results.add(albums);
                 results.add(artists);
-                results.add(songs);
+                results.add(songs);*/
 
 
                 // workaround to avoid issues with some emulators and keyboard devices firing twice if a keyboard enter is used
                 // see https://code.google.com/p/android/issues/detail?id=24599
-                searchView.clearFocus();*/
+                searchView.clearFocus();
                 return true;
             }
 
